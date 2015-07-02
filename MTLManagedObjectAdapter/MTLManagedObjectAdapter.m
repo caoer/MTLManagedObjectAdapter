@@ -452,7 +452,7 @@ static SEL MTLSelectorWithKeyPattern(NSString *key, const char *suffix) {
 					id<MTLTransformerErrorHandling> errorHandlingTransformer = (id)transformer;
 
 					BOOL success = YES;
-					transformedValue = [errorHandlingTransformer reverseTransformedValue:value success:&success error:error];
+					transformedValue = [errorHandlingTransformer reverseTransformedValue:value success:&success error:&tmpError];
 
 					if (!success) return NO;
 				} else {
